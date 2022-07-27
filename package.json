@@ -1,0 +1,20 @@
+{
+  "name": "cypressdemo",
+  "version": "1.0.0",
+  "description": "Cypress Testing Demo",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/davidMurillo86/cypress-test.git"
+  },
+  "author": "David Murillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidMurillo86/cypress-test/issues"
+  },
+  "dependencies": {
+    "cypress": "^10.3.1"
+  }
+}
