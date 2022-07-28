@@ -1,0 +1,10 @@
+{
+    "login":{
+        "url":"/login",
+        "method":"POST"
+    },
+    "loginCheck":{
+        "url":"/check",
+        "method":"POST"
+    }
+}
