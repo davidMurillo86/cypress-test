@@ -4,7 +4,7 @@ class IndexPage {
   private signUpButton: string = '#signin2'
 
   public clickLoginLink() {
-    cy.get(this.loginLink).click()
+    cy.get(this.loginLink).should('be.visible').click()
   }
 
   public validateLoggedUser(username: string) {
@@ -14,19 +14,19 @@ class IndexPage {
   }
 
   public selectCategory(category: string) {
-    cy.contains(category).click()
+    cy.contains(category).should('be.visible').click()
   }
 
   public selectItem(item: string) {
-    cy.contains(item).click()
+    cy.contains(item).should('be.visible').click()
   }
 
   public clickCartButton() {
-    cy.contains('Cart').click()
+    cy.contains('Cart').should('be.visible').click()
   }
 
   public clickSignUpButton() {
-    cy.get(this.signUpButton).click()
+    cy.get(this.signUpButton).should('be.visible').click()
   }
 }
 export default new IndexPage()
