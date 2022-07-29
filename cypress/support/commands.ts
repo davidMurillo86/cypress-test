@@ -23,24 +23,25 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import apiRoutes from "../fixtures/apiRoutes.json";
+import apiRoutes from '../fixtures/apiRoutes.json'
+var _ = require('lodash')
 
-Cypress.Commands.add("loginViaApi", (username: string, password: string) => {
-  let passwordBase64 = btoa(unescape(encodeURIComponent(password)));
-  cy.log("password:" + passwordBase64);
+Cypress.Commands.add('loginViaApi', (username: string, password: string) => {
+  let passwordBase64 = btoa(_.unescape(encodeURIComponent(password)))
+  cy.log('password:' + passwordBase64)
   cy.request({
     method: apiRoutes.login.method,
-    url: Cypress.env("apiUrl") + apiRoutes.login.url,
+    url: Cypress.env('apiUrl') + apiRoutes.login.url,
     body: {
       username: username,
       password: passwordBase64,
     },
   })
     .then((resp) => {
-      expect(resp.status).to.eq(200);
+      expect(resp.status).to.eq(200)
     })
-    .its("body")
+    .its('body')
     .then((body) => {
-      cy.setCookie("tokenp_", body.split(" ")[1]);
-    });
-});
+      cy.setCookie('tokenp_', body.split(' ')[1])
+    })
+})
