@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Cypress Testing Demo",
   "scripts": {
-    "test": "npx cypress open"
+    "cypress:open": "cypress open",
+    "test": "cypress run",
+    "cypress:chrome": "cypress run --browser chrome"
   },
   "repository": {
     "type": "git",
@@ -15,6 +17,16 @@
     "url": "https://github.com/davidMurillo86/cypress-test/issues"
   },
   "dependencies": {
-    "cypress": "^10.3.1"
+    "cypress": "^10.3.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "cypress-mochawesome-reporter": "^3.2.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "prettier": "2.7.1",
+    "typescript": "^4.7.4"
   }
 }
