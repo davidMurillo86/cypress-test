@@ -3,7 +3,7 @@ class LoginPage {
   private password: string = '#loginpassword'
   private loginBtn: string = '.btn-primary'
 
-  private setUsername(username: string) {
+  set setUsername(username: string) {
     cy.get(this.username).as('user').should('exist')
     cy.get('@user')
       .clear()
@@ -11,7 +11,7 @@ class LoginPage {
       .should('have.value', username)
   }
 
-  private setPassword(password: string) {
+  set setPassword(password: string) {
     cy.get(this.password).as('password').should('exist')
     cy.get('@password')
       .clear()
@@ -24,8 +24,8 @@ class LoginPage {
   }
 
   public login(username: string, password: string) {
-    this.setUsername(username)
-    this.setPassword(password)
+    this.setUsername = username
+    this.setPassword = password
     this.clickLoginButton()
   }
 }

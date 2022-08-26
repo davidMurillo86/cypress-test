@@ -2,13 +2,13 @@ import LoginPage from '../pages/LoginPage'
 import IndexPage from '../pages/IndexPage'
 import apiRoutes from '../fixtures/apiRoutes.json'
 
-describe('Login tests', () => {
-  beforeEach(function () {
-    cy.fixture('userData.json').then((user) => {
-      this.userData = user
-    })
+before(function(){
+  cy.fixture('userData.json').then((user) => {
+    this.userData = user
   })
+})
 
+describe('Login tests', () => {
   it('Login via UI', function () {
     cy.visit('/')
     IndexPage.clickLoginLink()

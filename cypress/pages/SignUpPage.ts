@@ -8,7 +8,7 @@ class SignUpPage {
   private user: string = ''
   private userPass: string = ''
 
-  private setUsername(username: string) {
+  set setUsername(username: string) {
     cy.get(this.username).as('username')
     cy.get('@username')
       .clear()
@@ -16,7 +16,7 @@ class SignUpPage {
       .should('have.value', username)
   }
 
-  private setPassword(password: string) {
+  set setPassword(password: string) {
     cy.get(this.password).as('password')
     cy.get('@password')
       .clear()
@@ -34,18 +34,18 @@ class SignUpPage {
     cy.log('Generating user: ' + this.user + ' pass:' + this.userPass)
   }
 
-  public getUserName() {
+  get getUserName(): string {
     return this.user
   }
 
-  public getPassword() {
+  get getPassword(): string {
     return this.userPass
   }
 
   public signUp() {
     this.generateUser()
-    this.setUsername(this.user)
-    this.setPassword(this.userPass)
+    this.setUsername = this.username
+    this.setPassword = this.userPass
     cy.intercept({
       method: apiRoutes.signUp.method,
       url: apiRoutes.signUp.url,

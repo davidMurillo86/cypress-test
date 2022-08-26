@@ -11,7 +11,7 @@ describe('Sign up tests', () => {
 
   it('Log in with created user', () => {
     IndexPage.clickLoginLink()
-    LoginPage.login(SignUpPage.getUserName(), SignUpPage.getPassword())
-    IndexPage.validateLoggedUser(SignUpPage.getUserName())
+    LoginPage.login(SignUpPage.getUserName, SignUpPage.getPassword)
+    IndexPage.validateLoggedUser(SignUpPage.getUserName)
   })
 })
